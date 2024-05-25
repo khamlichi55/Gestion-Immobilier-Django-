@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Détail de l'Immobilier{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h1 class="mb-4">{{ immobilier.titre }}</h1>
+            
+            {% if immobilier.image %}
+            <div id="carouselExampleIndicators" class="carousel slide mb-4" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="{{ immobilier.image.url }}" alt="{{ immobilier.titre }}">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Précédent</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Suivant</span>
+                </a>
+            </div>
+            {% endif %}
+            
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Détails</h4>
+                    <p class="card-text"><strong>Adresse :</strong> {{ immobilier.adresse }}</p>
+                    <p class="card-text"><strong>Prix :</strong> {{ immobilier.prix }} €</p>
+                    <p class="card-text"><strong>Description :</strong> {{ immobilier.description }}</p>
+                </div>
+            </div>
+            <a class="btn btn-primary mt-4" href="{% url 'immobilier_list' %}">Retour à la liste</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
