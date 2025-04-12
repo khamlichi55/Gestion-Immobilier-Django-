@@ -96,6 +96,9 @@ python manage.py runserver
 
 ## Auteurs
 
+- **Idrissi Khamlichi Abdelhadi** - Ingenieur Informatique et Reseaux
+-   [Mon CvWeb](https://ik-abdou.vercel.app/)
+
 
 
 
